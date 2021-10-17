@@ -1,0 +1,8 @@
+{
+    "playlists": [
+        { "id": 1, "name": "Lorem ipsum" },
+        { "id": 2, "name": "Dolor sit" },
+        { "id": 3, "name": "amet consectetur" },
+        { "id": 4, "name": "Last one" }
+    ]
+}
