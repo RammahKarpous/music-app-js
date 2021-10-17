@@ -43,7 +43,7 @@ export default {
 		padding: 0;
 		margin: 0;
 		width: 100%;
-		height: 81.5%;
+		height: 84.7%;
 		overflow-y: scroll;
 
 		&__name {
