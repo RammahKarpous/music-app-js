@@ -1,6 +1,8 @@
 <template>
-	<Sidebar />
-	<router-view />
+	<div class="app-wrapper">
+		<Sidebar />
+		<router-view />
+	</div>
 </template>
 
 <script>
@@ -17,5 +19,12 @@ export default {
 body {
 	background: $black-100;
 	margin: 0;
+}
+
+.app-wrapper {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	display: grid;
+	grid-template-columns: 260px 1fr;
+	gap: 60px;
 }
 </style>
