@@ -1,0 +1,4 @@
+@mixin padding($py, $px, $width: 100%) {
+    padding: $py $px;
+    width: calc(#{$width} - (#{$px * 2}));
+}

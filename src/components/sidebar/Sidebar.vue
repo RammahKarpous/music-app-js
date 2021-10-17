@@ -1,7 +1,10 @@
 <template>
 	<div class="sidebar">
-		<ProfilePicture />
-		<Playlist />
+		<div>
+			<ProfilePicture />
+			<Playlist />
+		</div>
+
 		<PlayingSong />
 	</div>
 </template>
@@ -25,11 +28,16 @@ export default {
 $width: 230px;
 
 .sidebar {
-	background: #1a1817;
+	background: $black-300;
 	width: $width;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: 0;
 	height: 100vh;
 
-	display: grid;
-	grid-template-rows: $width 1fr ($width + 100px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 </style>

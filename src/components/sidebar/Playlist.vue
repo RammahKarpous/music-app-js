@@ -1,83 +1,86 @@
 <template>
-  <div class="playlist-wrapper">
-    <Button />
-    <ul class="playlists">
-      <li class="playlist-name active-playlist">
-        <a href="#">Lorem ipsum</a>
-        <span class="border"></span>
-      </li>
-      <li class="playlist-name">
-        <a href="#">dolor sit</a>
-        <span class="border"></span>
-      </li>
-      <li class="playlist-name">
-        <a href="#">amet consectetur</a>
-        <span class="border"></span>
-      </li>
-    </ul>
-  </div>
+	<div class="playlist-wrapper">
+		<Button />
+		<ul class="playlist">
+			<li class="playlist__name playlist__active">
+				<a href="#">Lorem ipsum</a>
+			</li>
+			<li class="playlist__name">
+				<a href="#">dolor sit</a>
+			</li>
+			<li class="playlist__name">
+				<a href="#">amet consectetur</a>
+			</li>
+			<li class="playlist__name">
+				<a href="#">Last one</a>
+			</li>
+		</ul>
+	</div>
 </template>
 
 <script>
 import Button from "../shared/Button.vue";
 
 export default {
-  name: "Playlist",
-  components: {
-    Button
-  }
+	name: "Playlist",
+	components: {
+		Button
+	}
 };
 </script>
 
 <style lang="scss" scoped>
 .playlist-wrapper {
-  width: 100%;
+	width: 100%;
+	max-height: 315px;
+	height: 315px;
 
-  .playlists {
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 0;
-    margin: 0;
-    width: 100%;
+	.playlist {
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		height: 81.5%;
+		overflow-y: scroll;
 
-    .playlist-name {
-      position: relative;
-      list-style-type: none;
-      width: 100%;
+		&__name {
+			position: relative;
+			list-style-type: none;
+			width: 100%;
 
-      a {
-        text-decoration: none;
-        color: #fff;
-        display: inline-block;
-        padding: 20px;
-        width: calc(100% - 40px);
-        background: transparent;
-        transition: 0.4s;
+			a {
+				text-decoration: none;
+				color: #fff;
+				display: inline-block;
+				@include padding(12px, 20px);
+				background: transparent;
+				transition: 0.4s;
 
-        &:hover {
-          background: #161413;
-        }
-      }
+				&:hover {
+					background: #161413;
+				}
+			}
+		}
 
-      .border {
-        height: 3px;
-        background: #f44d29;
-        position: absolute;
-        bottom: 0;
-        left: 20px;
-        transition: 0.4s;
-      }
+		.border {
+			height: 3px;
+			background: #f44d29;
+			position: absolute;
+			bottom: 0;
+			left: 20px;
+			transition: 0.4s;
+		}
 
-      &.active-playlist {
-        background: #161413;
+		&__active {
+			background: #161413;
 
-        .border {
-          width: 30px;
-        }
-      }
-    }
-  }
+			.border {
+				width: 30px;
+			}
+		}
+	}
 }
 </style>

@@ -1,7 +1,14 @@
 <template>
 	<div class="app-wrapper">
 		<Sidebar />
-		<router-view />
+
+		<div class="bg">
+			<img src="./assets/logo.svg" alt="Logo" />
+
+			<div class="pages">
+				<router-view />
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -21,10 +28,43 @@ body {
 	margin: 0;
 }
 
+::-webkit-scrollbar {
+	width: 6px;
+	background: $black-400;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $black-500;
+	transition: 0.4s;
+
+	&:hover {
+		background: lighten($black-500, 5%);
+	}
+}
+
 .app-wrapper {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	display: grid;
-	grid-template-columns: 260px 1fr;
-	gap: 60px;
+	grid-template-columns: 230px 1fr 230px;
+
+	.bg {
+		grid-column: 2;
+		padding: 15px;
+	}
+
+	.pages {
+		position: relative;
+		grid-column: 2;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.logo {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
 }
 </style>
