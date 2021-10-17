@@ -1,8 +1,9 @@
 {
     "playlists": [
-        { "id": 1, "name": "Lorem ipsum" },
-        { "id": 2, "name": "Dolor sit" },
-        { "id": 3, "name": "amet consectetur" },
-        { "id": 4, "name": "Last one" }
-    ]
+        { "id": 1, "name": "Lorem ipsum", "active": true },
+        { "id": 2, "name": "Dolor sit", "active": false },
+        { "id": 3, "name": "amet consectetur", "active": false },
+        { "id": 4, "name": "Last one", "active": false }
+    ],
+    "tracks": []
 }

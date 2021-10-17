@@ -2,17 +2,12 @@
 	<div class="playlist-wrapper">
 		<Button />
 		<ul class="playlist">
-			<li class="playlist__name playlist__active">
-				<a href="#">Lorem ipsum</a>
-			</li>
-			<li class="playlist__name">
-				<a href="#">dolor sit</a>
-			</li>
-			<li class="playlist__name">
-				<a href="#">amet consectetur</a>
-			</li>
-			<li class="playlist__name">
-				<a href="#">Last one</a>
+			<li
+				:class="`playlist__name ${playlist.active === true ? 'playlist__active' : ''}`"
+				v-for="playlist in playlists"
+				:key="playlist.id"
+			>
+				<a href="#">{{ playlist.name }}</a>
 			</li>
 		</ul>
 	</div>
@@ -20,11 +15,19 @@
 
 <script>
 import Button from "../shared/Button.vue";
+import getPlaylists from "../../composables/getPlaylists";
 
 export default {
 	name: "Playlist",
 	components: {
 		Button
+	},
+	setup() {
+		const { playlists, error, load } = getPlaylists()
+
+		load()
+
+		return { playlists, error }
 	}
 };
 </script>
